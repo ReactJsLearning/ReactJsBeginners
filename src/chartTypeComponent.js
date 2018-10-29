@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import selectOptionData from "./jsonData/employeeDetails.json";
 import ControlledOpenSelect from "./selectOption.js";
 import LineChartComponent from './lineChartComponent.js';
-
+import ParentComp from './ParentComp.js';
 function TabContainer(props) {
   return (
     <Typography component="div" style={{ padding: 8 * 12 }}>
@@ -94,7 +94,7 @@ class SimpleTabs extends React.Component {
         </AppBar>
         <ControlledOpenSelect emp={selectOptionData} initalData={this.state.employeeDetails}  open={this.handleOpen} close={this.handleClose} value={this.state.empName} inputPropsname={this.state.empName}/>
         {value === 0 && <TabContainer><div><LineChartComponent /></div></TabContainer>}
-        {value === 1 && <TabContainer><div>
+        {value === 1 && <TabContainer><div><ParentComp />
        </div></TabContainer>}
       </div>
     );
