@@ -1,0 +1,65 @@
+[
+    {
+    "EmployeeId":"0001",
+    "EmployeeName":"Sowjanya",
+    "Designation":"Software Devoleper",
+    "Performance":[{
+        "Rating":"4.5",
+        "Month":"May"
+        },
+        {
+            "Rating":"3.6",
+            "Month":"June"
+        },
+        {
+            "Rating":"3",
+            "Month":"July"
+        },{
+            "Rating":"4.9",
+            "Month":"August"
+        }]
+
+    },
+    {
+        "EmployeeId":"0002",
+        "EmployeeName":"Priyanka",
+        "Designation":"Software Devoleper",
+        "Performance":[{
+            "Rating":"5",
+            "Month":"May"
+            },
+            {
+                "Rating":"4.6",
+                "Month":"June"
+            },
+            {
+                "Rating":"3.8",
+                "Month":"July"
+            },{
+                "Rating":"4.2",
+                "Month":"August"
+            }]
+    
+        },
+        {
+            "EmployeeId":"0003",
+            "EmployeeName":"Shravani",
+            "Designation":"Software Devoleper",
+            "Performance":[{
+                "Rating":"4.9",
+                "Month":"May"
+                },
+                {
+                    "Rating":"4",
+                    "Month":"June"
+                },
+                {
+                    "Rating":"3.2",
+                    "Month":"July"
+                },{
+                    "Rating":"4.5",
+                    "Month":"August"
+                }]
+        
+            }
+]
