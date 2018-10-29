@@ -95,7 +95,7 @@ class SimpleTabs extends React.Component {
         <ControlledOpenSelect emp={selectOptionData} initalData={this.state.employeeDetails}  open={this.handleOpen} close={this.handleClose} value={this.state.empName} inputPropsname={this.state.empName}/>
         {value === 0 && <TabContainer><div><LineChartComponent /></div></TabContainer>}
         {value === 1 && <TabContainer><div>
-        </div></TabContainer>}
+       </div></TabContainer>}
       </div>
     );
   }
