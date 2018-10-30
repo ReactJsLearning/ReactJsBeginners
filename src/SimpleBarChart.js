@@ -12,7 +12,7 @@ class SimpleBarChart extends Component {
     const data = this.props.barchartdata;
         return (
             <div>
-               <BarChart width={1000} height={500} data={data}
+               <BarChart width={600} height={300} data={data}
                     margin={{ top: 30, right: 30, left: 30, bottom: 10 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="Month" />
