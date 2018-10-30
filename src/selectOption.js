@@ -22,30 +22,30 @@ const styles = theme => ({
 
 class ControlledOpenSelect extends React.Component {
  
-  constructor(props){
-    super(props)
-    this.state = {
-     employeeDetails:this.props.initalData,
-    empName:this.props.inputPropsname};
-  }
-  onSelecthandleChange = event => {
-    var selctedData = this.props.emp;
-    this.setState({ [event.target.name]: event.target.value });
-    for (var i = 0; i < selctedData.length; i++) {
+  // constructor(props){
+  //   super(props)
+  //   this.state = {
+  //    employeeDetails:this.props.initalData,
+  //   empName:this.props.inputPropsname};
+  // }
+  // onSelecthandleChange = event => {
+  //   var selctedData = this.props.emp;
+  //   this.setState({ [event.target.name]: event.target.value });
+  //   for (var i = 0; i < selctedData.length; i++) {
     
-      if (selctedData[i].EmployeeId === event.target.value) {
+  //     if (selctedData[i].EmployeeId === event.target.value) {
       
-        this.setState({
+  //       this.setState({
           
-         employeeDetails: selctedData[i].Performance,
-         empName: event.target.value,
+  //        employeeDetails: selctedData[i].Performance,
+  //        empName: event.target.value,
         
-        });
+  //       });
         
-        console.log(this.state.employeeDetails);
-      }
-    }
-  };
+  //       console.log(this.state.employeeDetails);
+  //     }
+  //   }
+  // };
 
   render() {
     //const { classes } = this.props;
@@ -63,10 +63,10 @@ class ControlledOpenSelect extends React.Component {
           style ={{borderBottom: "1px solid #fff",color:"Black"}}
           onOpen={this.props.open}
           onClose={this.props.close}
-          value={this.state.empName}
-          onChange={this.onSelecthandleChange}
+          value={this.props.value}
+          onChange={this.props.change}
           inputProps={{
-            name: this.state.empName,
+            name: this.props.inputPropsname,
             id: 'empList-id',
           }}
           >
@@ -81,7 +81,8 @@ class ControlledOpenSelect extends React.Component {
        
       </form>
       <div  style={{margin: "10px 0px 0px 0"}}>
-      <LineChartComponent empData={this.state.employeeDetails} /> </div>
+      {/* <LineChartComponent empData={this.state.employeeDetails} /> */}
+       </div>
       </div>
     );
   }

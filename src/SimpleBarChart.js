@@ -9,17 +9,17 @@ class SimpleBarChart extends Component {
         };
     }
   render() {
-    
+    const data = this.props.barchartdata;
         return (
             <div>
-               <BarChart width={1000} height={500} data={this.props.myProp}
+               <BarChart width={1000} height={500} data={data}
                     margin={{ top: 30, right: 30, left: 30, bottom: 10 }}>
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="month" />
+                    <XAxis dataKey="Month" />
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="rating" fill="#8884d8"label={<CustomizedLabel />}/>
+                    <Bar dataKey="Rating" fill="#8884d8"/>
                     {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
                 </BarChart> 
 
