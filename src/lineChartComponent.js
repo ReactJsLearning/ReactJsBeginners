@@ -6,11 +6,11 @@ import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'rec
 class LineChartComponent extends React.Component{
  
   render() {
-    const data = this.props.empData;
-    console.log(this.props.empData)
+    const data = this.props.linechartdata;
+    console.log(this.props.linechartdata)
     return ( 
 <div>
- {/* <LineChart width={600} height={300} data={data}
+ <LineChart width={600} height={300} data={data}
             margin={{top: 5, right: 30, left: 20, bottom: 5}}>
        <XAxis dataKey="Month"/>
        <YAxis/>
@@ -19,7 +19,7 @@ class LineChartComponent extends React.Component{
        <Legend />
        
        <Line type="monotone" dataKey="Rating" stroke="#82ca9d" />
-      </LineChart>    */}
+      </LineChart>    
   </div>
   
     );

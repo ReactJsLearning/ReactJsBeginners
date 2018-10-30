@@ -9,6 +9,7 @@ import selectOptionData from "./jsonData/employeeDetails.json";
 import ControlledOpenSelect from "./selectOption.js";
 import LineChartComponent from './lineChartComponent.js';
 import ParentComp from './ParentComp.js';
+import SimpleBarChart from './SimpleBarChart.js';
 function TabContainer(props) {
   return (
     <Typography component="div" style={{ padding: 8 * 12 }}>
@@ -34,7 +35,8 @@ class SimpleTabs extends React.Component {
     super(props)
     this.state = {
      employeeDetails:selectOptionData[0].Performance,
-     empName:selectOptionData[0].EmployeeId };
+     empName:selectOptionData[0].EmployeeId ,
+     value: 0,};
   }
    
    handleSelectChange(e, index, value,empName,selectOptionData){
@@ -44,6 +46,24 @@ class SimpleTabs extends React.Component {
      });
    
  }
+//  onSelecthandleChange = event => {
+//   var selctedData = this.props.emp;
+//   this.setState({ [event.target.name]: event.target.value });
+//   for (var i = 0; i < selctedData.length; i++) {
+  
+//     if (selctedData[i].EmployeeId === event.target.value) {
+    
+//       this.setState({
+        
+//        employeeDetails: selctedData[i].Performance,
+//        empName: event.target.value,
+      
+//       });
+      
+//       console.log(this.state.employeeDetails);
+//     }
+//   }
+// };
    onSelecthandleChange = event => {
      this.setState({ [event.target.name]: event.target.value });
      for (var i = 0; i < selectOptionData.length; i++) {
@@ -71,10 +91,7 @@ class SimpleTabs extends React.Component {
      console.log(this.state.selectOptionData[0].Performance);
      this.setState({ open: true });
    };
-  state = {
-    value: 0,
-  };
-
+ 
   handleChange = (event, value) => {
     this.setState({ value });
   };
@@ -92,9 +109,9 @@ class SimpleTabs extends React.Component {
           </Tabs>
          
         </AppBar>
-        <ControlledOpenSelect emp={selectOptionData} initalData={this.state.employeeDetails}  open={this.handleOpen} close={this.handleClose} value={this.state.empName} inputPropsname={this.state.empName}/>
-        {value === 0 && <TabContainer><div><LineChartComponent /></div></TabContainer>}
-        {value === 1 && <TabContainer><div><ParentComp />
+        <ControlledOpenSelect emp={selectOptionData} change={this.onSelecthandleChange} initalData={this.state.employeeDetails}  open={this.handleOpen} close={this.handleClose} value={this.state.empName} inputPropsname={this.state.empName}/>
+        {value === 0 && <TabContainer><div><LineChartComponent linechartdata={this.state.employeeDetails}/></div></TabContainer>}
+        {value === 1 && <TabContainer><div><SimpleBarChart  barchartdata={this.state.employeeDetails}/>
        </div></TabContainer>}
       </div>
     );
